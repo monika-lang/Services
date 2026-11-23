@@ -1,0 +1,28 @@
+@model List<Request>
+
+@{
+    ViewData["Title"] = "Request Logs for this website.";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Request Method</th>
+            <th>Request Url</th>
+            <th>Request Status Code</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach(Request request in Model)
+            {
+                <tr>
+                    <td><strong>@request.Method</strong></td>
+                    <td>@request.PageLink</td>
+                    <td>@request.StatusCode</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

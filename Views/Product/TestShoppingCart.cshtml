@@ -1,0 +1,36 @@
+@model List<ProductListItemModel>
+
+@{
+    ViewData["Title"] = "Shopping cart Product List";
+}
+
+<div>
+    <h2>@ViewBag.Title</h2>
+
+    <p>
+        <a class="waves-effect waves-light btn deep-purple darken-4" asp-action="Index">Go back to products</a>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.CategoryName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
